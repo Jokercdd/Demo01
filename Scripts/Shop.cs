@@ -32,7 +32,7 @@ public partial class Shop : Control
         next = GetNode<Control>("Next");
         txtScore = GetNode<Label>("Next/txtScore");
         txtPerfect = GetNode<Label>("Next/txtPerfect");
-        Init(3, 1, false);
+        //Init(3, 1, false);
     }
 
     public override void _Process(double delta)
