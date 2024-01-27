@@ -1,13 +1,13 @@
 extends Node2D
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("move_right"):
 		position.x += 3
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("move_left"):
 		position.x -= 3
-	if Input.is_action_pressed("up"):
+	if Input.is_action_pressed("move_up"):
 		position.y -= 3
-	if Input.is_action_pressed("down"):
+	if Input.is_action_pressed("move_down"):
 		position.y += 3
 
 ## rot为旋转角度，调用该函数则被选择的物体设置为rot角度

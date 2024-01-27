@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv27xsxm458jd"]
+
+[ext_resource type="Script" path="res://Scenes/WorkSpace/select_rotation.gd" id="1_x3ctm"]
+[ext_resource type="PackedScene" uid="uid://vnhb34u4vrno" path="res://Scenes/entitise/goose.tscn" id="2_qvjho"]
+
+[node name="select_rotation" type="CanvasLayer"]
+script = ExtResource("1_x3ctm")
+
+[node name="Goose" parent="." instance=ExtResource("2_qvjho")]
+position = Vector2(647, 587)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+offset_left = 1590.0
+offset_top = 147.0
+offset_right = 1652.0
+offset_bottom = 822.0
