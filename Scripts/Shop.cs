@@ -32,7 +32,7 @@ public partial class Shop : Control
         next = GetNode<Control>("Next");
         txtScore = GetNode<Label>("Next/txtScore");
         txtPerfect = GetNode<Label>("Next/txtPerfect");
-        //Init(3, 1, false);
+        //Init(3, 1, true);
     }
 
     public override void _Process(double delta)
@@ -70,7 +70,7 @@ public partial class Shop : Control
         dialogue2.Hide();
         next.Show();
         txtScore.Text = "评分：" + this.grade;
-        if(curScore >= StageConstant._stageDict[nowID][0])
+        if (curScore >= StageConstant._stageDict[nowID][0])
             txtPerfect.Text = "距离Perfect分数：0";
         else
             txtPerfect.Text = "距离Perfect分数：" + (StageConstant._stageDict[nowID][0] - curScore).ToString();

@@ -35,15 +35,15 @@ public class StageConfigData
     {
         if (curScore > data.minPerfect)
         {
-            return EGrade.perfect;
+            return EGrade.genius;
         }
         else if (curScore < data.minWell && curScore > data.maxwell)
         {
-            return EGrade.well;
+            return EGrade.nice;
         }
         else if (curScore < data.maxEhuh)
         {
-            return EGrade.ehuh;
+            return EGrade.bruh;
         }
         else
         {
@@ -56,9 +56,9 @@ public class StageConfigData
 public enum EGrade
 {
     None = 0,
-    perfect = 1,
-    well = 2,
-    ehuh = 3,
+    genius = 1,
+    nice = 2,
+    bruh = 3,
 }
 
 
