@@ -93,6 +93,7 @@ public partial class Player : Area2D
         GD.Print("EnterShop");
         shop = shopScene.Instantiate();
         GetTree().Root.GetChild(0).AddChild(shop);
+
     }
 
     /// <summary>
