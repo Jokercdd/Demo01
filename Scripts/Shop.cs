@@ -3,39 +3,50 @@ using System;
 
 public partial class Shop : Control
 {
-	private Button btnSure;
-	private Button btnCancel;
-	private Button btnNext;
-	private Control next;
-	private Control dialogue;
+    private Button btnSure;
+    private Button btnCancel;
+    private Button btnNext;
+    private Control next;
+    private Control dialogue;
 
-	public override void _Ready()
-	{
+    // 当前关卡ID
+    private int nowID;
+
+    public override void _Ready()
+    {
         btnSure = GetNode<Button>("Dialogue/btnSure");
-		btnCancel = GetNode<Button>("Dialogue/btnCancel");
+        btnCancel = GetNode<Button>("Dialogue/btnCancel");
         btnNext = GetNode<Button>("Next/btnNext");
         dialogue = GetNode<Control>("Dialogue");
         next = GetNode<Control>("Next");
-	}
-
-	public override void _Process(double delta)
-	{
-
-	}
-
-	public void OnPressBtnSure()
-	{
-		dialogue.Hide();
-		next.Show();
+        nowID = Data.Instance.nowID;
     }
 
-	public void OnPressBtnCancel()
-	{
-		dialogue.Hide();
+    public override void _Process(double delta)
+    {
+        if (Input.IsActionPressed("quit"))
+            GetTree().Quit();
     }
-	
-	public void OnPressBtnNext()
-	{
-		// 下一关
-	}
+
+    public void OnPressBtnSure()
+    {
+        dialogue.Hide();
+        next.Show();
+    }
+
+    public void OnPressBtnCancel()
+    {
+        dialogue.Hide();
+    }
+
+    public void OnPressBtnNext()
+    {
+        // 下一关
+        int id = nowID + 1;
+        //Data.Instance.Init();
+        Data.Instance.InitLevel();
+        Data.Instance.InitDic();
+        Data.Instance.InitOrder(id);
+        QueueFree();
+    }
 }

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://brr4ocgdlfw3a"]
+[gd_scene load_steps=6 format=3 uid="uid://brr4ocgdlfw3a"]
 
 [ext_resource type="PackedScene" uid="uid://c1ua86kns1mqk" path="res://Scenes/Player.tscn" id="1_ktb63"]
 [ext_resource type="Texture2D" uid="uid://bjqaxtasnw6yj" path="res://icon.svg" id="1_pvcqv"]
+[ext_resource type="PackedScene" uid="uid://cq7crnnaq0idk" path="res://Scenes/Order.tscn" id="3_x5t1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yge67"]
 size = Vector2(156.5, 103)
@@ -65,6 +66,8 @@ shape = SubResource("RectangleShape2D_iftyr")
 position = Vector2(887.25, 293.25)
 scale = Vector2(0.753906, 1.20703)
 texture = ExtResource("1_pvcqv")
+
+[node name="Order" parent="." instance=ExtResource("3_x5t1y")]
 
 [connection signal="area_entered" from="Rotate" to="Player" method="EnterRotate"]
 [connection signal="area_exited" from="Rotate" to="Player" method="ExitRotate"]
