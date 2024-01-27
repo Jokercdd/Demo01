@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://xdat3t3hrtcl"]
+[gd_scene format=3 uid="uid://cxmr13uep36ja"]
 
 [node name="Main" type="Node2D"]
+<<<<<<< HEAD
+=======
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+>>>>>>> 0617173812d50d2d544cdbb34ed824b16ff7cab0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://by5544e6kihk3"]
+
+[ext_resource type="Script" path="res://Scenes/MainScenes/GameRunningScenes/select_rotation.gd" id="1_mocfw"]
+[ext_resource type="PackedScene" uid="uid://vnhb34u4vrno" path="res://Scenes/entitise/goose.tscn" id="2_2ef3h"]
+
+[node name="select_rotation" type="Node2D"]
+script = ExtResource("1_mocfw")
+
+[node name="Goose" parent="." instance=ExtResource("2_2ef3h")]

@@ -4,12 +4,12 @@ using System;
 public partial class Start : CanvasLayer
 {
 
-    private PackedScene newsPapers;
+    private PackedScene otherScene;
 
 
     public override void _Ready()
 	{
-        newsPapers = GD.Load<PackedScene>("res://Scenes/Newspapers.tscn");
+        otherScene = GD.Load<PackedScene>("res://Scenes/Newspapers.tscn");
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,16 +19,13 @@ public partial class Start : CanvasLayer
 
     public void btnStart()
     {
-        if (newsPapers != null)
+        if (otherScene != null)
         {
-            GD.Print("aa");
-
             // 创建场景实例
-            Newspapers instance = newsPapers.Instantiate<Newspapers>();
+            Node instance = otherScene.Instantiate();
 
             // 将实例添加到场景中
             GetTree().Root.AddChild(instance);
-            GetTree().Root.RemoveChild(this);
         }
     }
 	public void btnQuit()

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhqmc62n1pcyl"]
+
+[ext_resource type="PackedScene" uid="uid://vnhb34u4vrno" path="res://Scenes/entitise/goose.tscn" id="1_oe8kt"]
+
+[node name="all_rotation" type="Node2D"]
+
+[node name="Goose" parent="." instance=ExtResource("1_oe8kt")]
+position = Vector2(794, 530)

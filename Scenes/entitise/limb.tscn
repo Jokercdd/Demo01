@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://drvpqbn0svkmt"]
+
+[ext_resource type="Texture2D" uid="uid://ckq6jfsnmjkf7" path="res://icon.svg" id="1_21gvr"]
+[ext_resource type="Script" path="res://Scenes/entitise/limbs.gd" id="2_tv2wy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulxqs"]
+size = Vector2(122.128, 123.874)
+
+[node name="head" type="Sprite2D"]
+position = Vector2(6.96401, -98.023)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_21gvr")
+script = ExtResource("2_tv2wy")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.116264, 0.770966)
+shape = SubResource("RectangleShape2D_ulxqs")
