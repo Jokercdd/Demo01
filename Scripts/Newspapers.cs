@@ -1,15 +1,28 @@
-using Godot;
+﻿using Godot;
 using System;
 
 public partial class Newspapers : CanvasLayer
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+    private PackedScene mainGame;
+    private Sprite2D newsPapers;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Ready()
+	{
+        mainGame = GD.Load<PackedScene>("res://Scenes/MainGame.tscn");
+        newsPapers = GetNode<Sprite2D>("Newspaper");
+    }
+
 	public override void _Process(double delta)
 	{
-	}
+        if (Input.IsActionPressed("quit"))
+            GetTree().Quit();
+        if (Input.IsActionPressed("next"))
+        {
+            Node instance = mainGame.Instantiate();
+
+            // 将实例添加到场景中
+            GetTree().Root.AddChild(instance);
+            GetTree().Root.RemoveChild(this);
+        }
+    }
 }

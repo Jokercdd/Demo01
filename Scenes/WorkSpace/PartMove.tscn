@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://dmvxadwunfgb0"]
 
-[node name="Flip" type="Node"]
+[node name="PartMove" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 731.0
+offset_top = 277.0
+offset_right = 1757.0
+offset_bottom = 738.0
+theme_override_font_sizes/font_size = 220
+text = "PartMove"

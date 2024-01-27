@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1ua86kns1mqk"]
 
-[ext_resource type="Texture2D" uid="uid://bjqaxtasnw6yj" path="res://icon.svg" id="1_bed3n"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_of4pw"]
+[ext_resource type="Texture2D" uid="uid://dkxxi8i4ycxbb" path="res://Resources/goose.png" id="2_htbbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4gps"]
-size = Vector2(56, 56)
+size = Vector2(106, 124)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_of4pw")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(3, -2)
 shape = SubResource("RectangleShape2D_t4gps")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.421875, 0.421875)
-texture = ExtResource("1_bed3n")
+texture = ExtResource("2_htbbf")

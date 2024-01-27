@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://2h8or0rhw6x0"]
 
-[node name="Flip" type="Node"]
+[node name="Rotate" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 349.0
+offset_top = 623.0
+offset_right = 1051.0
+offset_bottom = 1084.0
+theme_override_font_sizes/font_size = 220
+text = "Rotate"

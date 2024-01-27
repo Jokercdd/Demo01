@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://qglftsfytij4"]
+
+[ext_resource type="Texture2D" uid="uid://dkxxi8i4ycxbb" path="res://Resources/goose.png" id="1_o80rx"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_yg4bl"]
+
+[node name="ShopScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 83.0
+offset_right = 1555.0
+offset_bottom = 979.0
+color = Color(0, 0, 0, 0.768627)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 114.0
+offset_right = 1327.0
+offset_bottom = 797.0
+texture = ExtResource("1_o80rx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 744.0
+offset_right = 1196.0
+offset_bottom = 843.0
+theme_override_font_sizes/font_size = 50
+text = "评分：well"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 863.0
+offset_right = 1061.0
+offset_bottom = 945.0
+theme_override_font_sizes/font_size = 50
+text = "Next"
+icon = SubResource("Texture2DRD_yg4bl")

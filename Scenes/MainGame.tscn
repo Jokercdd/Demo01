@@ -12,10 +12,10 @@ size = Vector2(98, 154.5)
 [node name="MainGame" type="CanvasLayer"]
 
 [node name="Player" parent="." instance=ExtResource("1_ktb63")]
-position = Vector2(1070, 600)
+position = Vector2(1769, 941)
 
 [node name="Rotate" type="Area2D" parent="."]
-position = Vector2(-85, -7)
+position = Vector2(441, 283)
 metadata/_edit_group_ = true
 
 [node name="RotateCollision" type="CollisionShape2D" parent="Rotate"]
@@ -28,7 +28,7 @@ scale = Vector2(1.22656, 0.757813)
 texture = ExtResource("1_pvcqv")
 
 [node name="Mirror" type="Area2D" parent="."]
-position = Vector2(-84, -6)
+position = Vector2(300, 98)
 metadata/_edit_group_ = true
 
 [node name="MirrorCollision" type="CollisionShape2D" parent="Mirror"]
@@ -41,7 +41,7 @@ scale = Vector2(1.22656, 0.757813)
 texture = ExtResource("1_pvcqv")
 
 [node name="PartMove" type="Area2D" parent="."]
-position = Vector2(-6, -12)
+position = Vector2(302, 266)
 metadata/_edit_group_ = true
 
 [node name="PartMoveCollision" type="CollisionShape2D" parent="PartMove"]
@@ -54,7 +54,7 @@ scale = Vector2(1.22656, 0.757813)
 texture = ExtResource("1_pvcqv")
 
 [node name="Shop" type="Area2D" parent="."]
-position = Vector2(-828, 150)
+position = Vector2(-816, 646)
 metadata/_edit_group_ = true
 
 [node name="ShopCollision" type="CollisionShape2D" parent="Shop"]
@@ -67,6 +67,10 @@ scale = Vector2(0.753906, 1.20703)
 texture = ExtResource("1_pvcqv")
 
 [connection signal="area_entered" from="Rotate" to="Player" method="EnterRotate"]
+[connection signal="area_exited" from="Rotate" to="Player" method="ExitRotate"]
 [connection signal="area_entered" from="Mirror" to="Player" method="EnterMirror"]
+[connection signal="area_exited" from="Mirror" to="Player" method="ExitMirror"]
 [connection signal="area_entered" from="PartMove" to="Player" method="EnterPartMove"]
+[connection signal="area_exited" from="PartMove" to="Player" method="ExitPartMove"]
 [connection signal="area_entered" from="Shop" to="Player" method="EnterShop"]
+[connection signal="area_exited" from="Shop" to="Player" method="ExitrShop"]

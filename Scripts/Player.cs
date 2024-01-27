@@ -8,17 +8,32 @@ public partial class Player : Area2D
 
     public Vector2 ScreenSize;
 
+    private PackedScene mirrorScene;
+    private PackedScene partMoveScene;
+    private PackedScene rotateScene;
+    private PackedScene shopScene;
+
+    private Node rotate;
+    private Node partMove;
+    private Node mirror;
+    private Node shop;
+
+
     [Signal]
     public delegate void EnterEventHandler();
 
 
     public override void _Ready()
-	{
+    {
         ScreenSize = GetViewportRect().Size;
+        mirrorScene = GD.Load<PackedScene>("res://Scenes/WorkSpace/Mirror.tscn");
+        partMoveScene = GD.Load<PackedScene>("res://Scenes/WorkSpace/PartMove.tscn");
+        rotateScene = GD.Load<PackedScene>("res://Scenes/WorkSpace/Rotate.tscn");
+        shopScene = GD.Load<PackedScene>("res://Scenes/WorkSpace/Shop.tscn");
     }
 
-	public override void _Process(double delta)
-	{
+    public override void _Process(double delta)
+    {
         Vector2 velocity = Vector2.Zero; // The player's movement vector.
 
         if (Input.IsActionPressed("move_right"))
@@ -29,6 +44,8 @@ public partial class Player : Area2D
             velocity.Y += 1;
         if (Input.IsActionPressed("move_up"))
             velocity.Y -= 1;
+        if (Input.IsActionPressed("quit"))
+            GetTree().Quit();
 
 
         if (velocity.Length() > 0)
@@ -53,19 +70,51 @@ public partial class Player : Area2D
     public void EnterRotate(Node2D body)
     {
         GD.Print("EnterRotate");
+
+        rotate = rotateScene.Instantiate();
+        GetTree().Root.AddChild(rotate);
     }
 
     public void EnterMirror(Node2D body)
     {
         GD.Print("EnterMirror");
+        mirror = mirrorScene.Instantiate();
+        GetTree().Root.AddChild(mirror);
     }
 
     public void EnterPartMove(Node2D body)
     {
         GD.Print("EnterPartMove");
+        partMove = partMoveScene.Instantiate();
+        GetTree().Root.AddChild(partMove);
     }
     public void EnterShop(Node2D body)
     {
         GD.Print("EnterShop");
+        shop = shopScene.Instantiate();
+        GetTree().Root.GetChild(0).AddChild(shop);
+    }
+
+    /// <summary>
+    /// 以下为退出时删除节点
+    /// </summary>
+    /// <param name="body"></param>
+    public void ExitRotate(Node2D body)
+    {
+        GetTree().Root.RemoveChild(rotate);
+    }
+
+    public void ExitMirror(Node2D body)
+    {
+        GetTree().Root.RemoveChild(mirror);
+    }
+
+    public void ExitPartMove(Node2D body)
+    {
+        GetTree().Root.RemoveChild(partMove);
+    }
+    public void ExitrShop(Node2D body)
+    {
+        GetTree().Root.GetChild(0).RemoveChild(shop);
     }
 }
