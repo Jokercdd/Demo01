@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bwstr7b0ciu3u"]
+[gd_scene load_steps=3 format=3 uid="uid://bwstr7b0ciu3u"]
+
+[ext_resource type="Script" path="res://Scripts/Newspapers.cs" id="1_d8n7t"]
+[ext_resource type="Texture2D" uid="uid://bjqaxtasnw6yj" path="res://icon.svg" id="2_usdir"]
 
 [node name="Newspapers" type="CanvasLayer"]
+script = ExtResource("1_d8n7t")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(347, 465)
+texture = ExtResource("2_usdir")

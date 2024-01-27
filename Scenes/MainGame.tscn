@@ -12,10 +12,10 @@ size = Vector2(98, 154.5)
 [node name="MainGame" type="CanvasLayer"]
 
 [node name="Player" parent="." instance=ExtResource("1_ktb63")]
-position = Vector2(1070, 600)
+position = Vector2(1829, 992)
 
 [node name="Rotate" type="Area2D" parent="."]
-position = Vector2(-85, -7)
+position = Vector2(433, 171)
 metadata/_edit_group_ = true
 
 [node name="RotateCollision" type="CollisionShape2D" parent="Rotate"]
@@ -28,7 +28,7 @@ scale = Vector2(1.22656, 0.757813)
 texture = ExtResource("1_pvcqv")
 
 [node name="Mirror" type="Area2D" parent="."]
-position = Vector2(-84, -6)
+position = Vector2(287, 169)
 metadata/_edit_group_ = true
 
 [node name="MirrorCollision" type="CollisionShape2D" parent="Mirror"]
@@ -41,7 +41,7 @@ scale = Vector2(1.22656, 0.757813)
 texture = ExtResource("1_pvcqv")
 
 [node name="PartMove" type="Area2D" parent="."]
-position = Vector2(-6, -12)
+position = Vector2(246, 171)
 metadata/_edit_group_ = true
 
 [node name="PartMoveCollision" type="CollisionShape2D" parent="PartMove"]
@@ -54,7 +54,7 @@ scale = Vector2(1.22656, 0.757813)
 texture = ExtResource("1_pvcqv")
 
 [node name="Shop" type="Area2D" parent="."]
-position = Vector2(-828, 150)
+position = Vector2(-821, 604)
 metadata/_edit_group_ = true
 
 [node name="ShopCollision" type="CollisionShape2D" parent="Shop"]
