@@ -17,6 +17,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="Next"]
+visible = false
 layout_mode = 0
 offset_left = 332.0
 offset_top = 83.0
@@ -43,17 +44,29 @@ text = "评分：well"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="txtPerfect" type="Label" parent="Next"]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 849.0
+offset_right = 1191.0
+offset_bottom = 948.0
+theme_override_font_sizes/font_size = 50
+text = "距离Perfect分数：10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="btnNext" type="Button" parent="Next"]
 layout_mode = 0
-offset_left = 803.0
-offset_top = 863.0
-offset_right = 1061.0
-offset_bottom = 945.0
+offset_left = 800.0
+offset_top = 964.0
+offset_right = 1058.0
+offset_bottom = 1046.0
 theme_override_font_sizes/font_size = 50
 text = "Next"
 icon = SubResource("Texture2DRD_yg4bl")
 
 [node name="Dialogue" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = 291.0
 offset_top = 94.0
@@ -68,18 +81,54 @@ offset_right = 1152.0
 offset_bottom = 726.0
 color = Color(0, 0, 0, 0.768627)
 
-[node name="Label" type="Label" parent="Dialogue"]
+[node name="btnSure" type="Button" parent="Dialogue"]
 layout_mode = 0
-offset_left = 426.0
-offset_top = 320.0
-offset_right = 965.0
-offset_bottom = 419.0
+offset_left = 350.0
+offset_top = 398.0
+offset_right = 608.0
+offset_bottom = 480.0
 theme_override_font_sizes/font_size = 50
-text = "是否确认售卖？"
+text = "确认售卖"
+icon = SubResource("Texture2DRD_yg4bl")
+
+[node name="btnCancel" type="Button" parent="Dialogue"]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 395.0
+offset_right = 1011.0
+offset_bottom = 477.0
+theme_override_font_sizes/font_size = 50
+text = "取消"
+icon = SubResource("Texture2DRD_yg4bl")
+
+[node name="Dialogue2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 291.0
+offset_top = 94.0
+offset_right = 1596.0
+offset_bottom = 975.0
+
+[node name="ColorRect" type="ColorRect" parent="Dialogue2"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 137.0
+offset_right = 1152.0
+offset_bottom = 726.0
+color = Color(0, 0, 0, 0.768627)
+
+[node name="Label" type="Label" parent="Dialogue2"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 336.0
+offset_right = 940.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 50
+text = "你真的要售卖这只鹅吗？"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="btnSure" type="Button" parent="Dialogue"]
+[node name="btnSure2" type="Button" parent="Dialogue2"]
 layout_mode = 0
 offset_left = 369.0
 offset_top = 574.0
@@ -89,7 +138,7 @@ theme_override_font_sizes/font_size = 50
 text = "确认"
 icon = SubResource("Texture2DRD_yg4bl")
 
-[node name="btnCancel" type="Button" parent="Dialogue"]
+[node name="btnCancel2" type="Button" parent="Dialogue2"]
 layout_mode = 0
 offset_left = 728.0
 offset_top = 571.0
@@ -102,3 +151,5 @@ icon = SubResource("Texture2DRD_yg4bl")
 [connection signal="pressed" from="Next/btnNext" to="." method="OnPressBtnNext"]
 [connection signal="pressed" from="Dialogue/btnSure" to="." method="OnPressBtnSure"]
 [connection signal="pressed" from="Dialogue/btnCancel" to="." method="OnPressBtnCancel"]
+[connection signal="pressed" from="Dialogue2/btnSure2" to="." method="OnPressBtnSure2"]
+[connection signal="pressed" from="Dialogue2/btnCancel2" to="." method="OnPressBtnCancel2"]

@@ -7,7 +7,7 @@ public partial class Data : Node
 {
 
     private static Data instance;
-    public static Data Instance => instance ?? (instance = new Data());
+    public static Data Instance => instance  = new Data();
 
     // 存储关卡数据
     public Dictionary<int, Level> levelDic = new Dictionary<int, Level>();

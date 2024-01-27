@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://cq7crnnaq0idk"]
 
 [ext_resource type="Script" path="res://Scripts/Data.cs" id="1_8hcve"]
-[ext_resource type="Texture2D" uid="uid://bqagtvl4ptjr" path="res://Resources/image/leg_F.png" id="2_aoltg"]
-[ext_resource type="Texture2D" uid="uid://cxnx2sc8lwqu4" path="res://Resources/image/wings_F.png" id="3_1rysu"]
-[ext_resource type="Texture2D" uid="uid://b6l8xs0bgd7x7" path="res://Resources/image/head.png" id="4_2nqg7"]
-[ext_resource type="Texture2D" uid="uid://cqn1b635i85fi" path="res://Resources/image/mouth.png" id="5_nwc8j"]
-[ext_resource type="Texture2D" uid="uid://d36sojb3tbio8" path="res://Resources/image/eyes.png" id="6_7i5vk"]
+[ext_resource type="Texture2D" path="res://Resources/image/leg_F.png" id="2_aoltg"]
+[ext_resource type="Texture2D" path="res://Resources/image/wings_F.png" id="3_1rysu"]
+[ext_resource type="Texture2D" path="res://Resources/image/head.png" id="4_2nqg7"]
+[ext_resource type="Texture2D" path="res://Resources/image/mouth.png" id="5_nwc8j"]
+[ext_resource type="Texture2D" path="res://Resources/image/eyes.png" id="6_7i5vk"]
 
 [node name="Order" type="CanvasLayer"]
 script = ExtResource("1_8hcve")
