@@ -19,9 +19,30 @@ offset_right = -100.0
 offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="VScrollBar" type="VScrollBar" parent="."]
+visible = false
 offset_left = 1590.0
 offset_top = 147.0
 offset_right = 1652.0
 offset_bottom = 822.0
+
+[node name="rollButton" type="Button" parent="."]
+offset_left = 288.0
+offset_top = 257.0
+offset_right = 564.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 40
+text = "选择旋转"
+
+[node name="addButton" type="Button" parent="."]
+offset_left = 631.0
+offset_top = 256.0
+offset_right = 907.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 40
+text = "选择添加"
+
+[connection signal="pressed" from="rollButton" to="." method="_on_roll_button_pressed"]
+[connection signal="pressed" from="addButton" to="." method="_on_add_button_pressed"]

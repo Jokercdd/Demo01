@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwstr7b0ciu3u"]
 
-[ext_resource type="Texture2D" uid="uid://df5fydn88w4cd" path="res://Resources/newspaper.png" id="1_6ca8a"]
+[ext_resource type="Texture2D" uid="uid://df5fydn88w4cd" path="res://Resources/NewsPaper/newspaper.png" id="1_6ca8a"]
 [ext_resource type="Script" path="res://Scripts/Newspapers.cs" id="1_d8n7t"]
 
 [node name="Newspapers" type="CanvasLayer"]
 script = ExtResource("1_d8n7t")
 
 [node name="Newspaper" type="Sprite2D" parent="."]
-position = Vector2(908, 509)
+position = Vector2(966, 529)
+scale = Vector2(0.885417, 0.933333)
 texture = ExtResource("1_6ca8a")

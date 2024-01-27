@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=3 uid="uid://bd5h8d05pms3o"]
+
+[ext_resource type="Texture2D" uid="uid://bdaqg57gltp5i" path="res://Resources/image/idle_images/wing_B.png" id="1_8rdf0"]
+[ext_resource type="Texture2D" uid="uid://cym6705fm06mk" path="res://Resources/image/move_ wingsB/move_wingsB_00.png" id="2_cw140"]
+[ext_resource type="Texture2D" uid="uid://chv5r3ia6b2vp" path="res://Resources/image/move_ wingsB/move_wingsB_01.png" id="3_gregj"]
+[ext_resource type="Texture2D" uid="uid://c1gps5j4c0cvb" path="res://Resources/image/move_ wingsB/move_wingsB_02.png" id="4_3good"]
+[ext_resource type="Texture2D" uid="uid://j77qtupvb7oa" path="res://Resources/image/move_ wingsB/move_wingsB_03.png" id="5_kq5jc"]
+[ext_resource type="Texture2D" uid="uid://b55fjfkankvap" path="res://Resources/image/move_ wingsB/move_wingsB_04.png" id="6_4fgm0"]
+[ext_resource type="Texture2D" uid="uid://cqnqnai88issl" path="res://Resources/image/move_ wingsB/move_wingsB_05.png" id="7_b38i0"]
+[ext_resource type="Texture2D" uid="uid://bq0wn8jv3pb6n" path="res://Resources/image/move_ wingsB/move_wingsB_06.png" id="8_p86x2"]
+[ext_resource type="Texture2D" uid="uid://oba1hlq0nyg" path="res://Resources/image/move_ wingsB/move_wingsB_07.png" id="9_x7fmc"]
+[ext_resource type="Texture2D" uid="uid://40jnysn1tep2" path="res://Resources/image/move_ wingsB/move_wingsB_08.png" id="10_aq7hu"]
+[ext_resource type="Texture2D" uid="uid://c3nb7tjm7a7hk" path="res://Resources/image/move_ wingsB/move_wingsB_09.png" id="11_y7l18"]
+[ext_resource type="Texture2D" uid="uid://cndgusrocys6t" path="res://Resources/image/空白图片.png" id="12_wep42"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikoin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_wep42")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cw140")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gregj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3good")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kq5jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4fgm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b38i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p86x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x7fmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_aq7hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y7l18")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8prkr"]
+radius = 32.0
+height = 155.588
+
+[node name="wing_b" type="Sprite2D" groups=["wing_b"]]
+position = Vector2(32, -81)
+texture = ExtResource("1_8rdf0")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ikoin")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7, -2)
+rotation = 0.47822
+shape = SubResource("CapsuleShape2D_8prkr")

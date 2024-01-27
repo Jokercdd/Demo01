@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Sprite2D
 
 @export var mouse_in_area: bool = false
 @export var selected: bool = false

@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://qglftsfytij4"]
+[gd_scene load_steps=4 format=3 uid="uid://qglftsfytij4"]
 
 [ext_resource type="Texture2D" uid="uid://dkxxi8i4ycxbb" path="res://Resources/goose.png" id="1_o80rx"]
+[ext_resource type="Script" path="res://Scripts/Shop.cs" id="1_ogowq"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_yg4bl"]
 
 [node name="ShopScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_ogowq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Next" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Next"]
 layout_mode = 0
 offset_left = 332.0
 offset_top = 83.0
@@ -16,7 +24,7 @@ offset_right = 1555.0
 offset_bottom = 979.0
 color = Color(0, 0, 0, 0.768627)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Next"]
 layout_mode = 0
 offset_left = 509.0
 offset_top = 114.0
@@ -24,7 +32,7 @@ offset_right = 1327.0
 offset_bottom = 797.0
 texture = ExtResource("1_o80rx")
 
-[node name="Label" type="Label" parent="."]
+[node name="txtScore" type="Label" parent="Next"]
 layout_mode = 0
 offset_left = 657.0
 offset_top = 744.0
@@ -35,7 +43,7 @@ text = "评分：well"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="btnNext" type="Button" parent="Next"]
 layout_mode = 0
 offset_left = 803.0
 offset_top = 863.0
@@ -44,3 +52,53 @@ offset_bottom = 945.0
 theme_override_font_sizes/font_size = 50
 text = "Next"
 icon = SubResource("Texture2DRD_yg4bl")
+
+[node name="Dialogue" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 291.0
+offset_top = 94.0
+offset_right = 1596.0
+offset_bottom = 975.0
+
+[node name="ColorRect" type="ColorRect" parent="Dialogue"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 137.0
+offset_right = 1152.0
+offset_bottom = 726.0
+color = Color(0, 0, 0, 0.768627)
+
+[node name="Label" type="Label" parent="Dialogue"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 320.0
+offset_right = 965.0
+offset_bottom = 419.0
+theme_override_font_sizes/font_size = 50
+text = "是否确认售卖？"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnSure" type="Button" parent="Dialogue"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 574.0
+offset_right = 627.0
+offset_bottom = 656.0
+theme_override_font_sizes/font_size = 50
+text = "确认"
+icon = SubResource("Texture2DRD_yg4bl")
+
+[node name="btnCancel" type="Button" parent="Dialogue"]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 571.0
+offset_right = 986.0
+offset_bottom = 653.0
+theme_override_font_sizes/font_size = 50
+text = "取消"
+icon = SubResource("Texture2DRD_yg4bl")
+
+[connection signal="pressed" from="Next/btnNext" to="." method="OnPressBtnNext"]
+[connection signal="pressed" from="Dialogue/btnSure" to="." method="OnPressBtnSure"]
+[connection signal="pressed" from="Dialogue/btnCancel" to="." method="OnPressBtnCancel"]

@@ -1,3 +1,92 @@
-[gd_scene format=3 uid="uid://cq7crnnaq0idk"]
+[gd_scene load_steps=7 format=3 uid="uid://cq7crnnaq0idk"]
+
+[ext_resource type="Script" path="res://Scripts/Data.cs" id="1_8hcve"]
+[ext_resource type="Texture2D" uid="uid://bqagtvl4ptjr" path="res://Resources/image/leg_F.png" id="2_aoltg"]
+[ext_resource type="Texture2D" uid="uid://cxnx2sc8lwqu4" path="res://Resources/image/wings_F.png" id="3_1rysu"]
+[ext_resource type="Texture2D" uid="uid://b6l8xs0bgd7x7" path="res://Resources/image/head.png" id="4_2nqg7"]
+[ext_resource type="Texture2D" uid="uid://cqn1b635i85fi" path="res://Resources/image/mouth.png" id="5_nwc8j"]
+[ext_resource type="Texture2D" uid="uid://d36sojb3tbio8" path="res://Resources/image/eyes.png" id="6_7i5vk"]
 
 [node name="Order" type="CanvasLayer"]
+script = ExtResource("1_8hcve")
+
+[node name="Head" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_group_ = true
+
+[node name="HeadNum" type="Label" parent="Head"]
+offset_left = 166.0
+offset_top = 78.0
+offset_right = 235.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 30
+text = "× 1"
+
+[node name="Control" type="Control" parent="Head"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -281.0
+offset_top = -304.0
+offset_right = -241.0
+offset_bottom = -264.0
+metadata/_edit_group_ = true
+
+[node name="Head" type="Sprite2D" parent="Head/Control"]
+position = Vector2(368.75, 409.089)
+scale = Vector2(0.689873, 0.689873)
+texture = ExtResource("4_2nqg7")
+
+[node name="Mouth" type="Sprite2D" parent="Head/Control"]
+position = Vector2(347, 381)
+scale = Vector2(0.734043, 0.734043)
+texture = ExtResource("5_nwc8j")
+
+[node name="Eyes" type="Sprite2D" parent="Head/Control"]
+position = Vector2(371, 368)
+scale = Vector2(0.441177, 0.441176)
+texture = ExtResource("6_7i5vk")
+
+[node name="Leg" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_group_ = true
+
+[node name="LegF" type="Sprite2D" parent="Leg"]
+position = Vector2(89, 231)
+texture = ExtResource("2_aoltg")
+
+[node name="LegNum" type="Label" parent="Leg"]
+offset_left = 163.0
+offset_top = 206.0
+offset_right = 232.0
+offset_bottom = 251.0
+theme_override_font_sizes/font_size = 30
+text = "× 1"
+
+[node name="Wing" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_group_ = true
+
+[node name="WingsF" type="Sprite2D" parent="Wing"]
+position = Vector2(88, 356)
+scale = Vector2(0.681208, 0.681208)
+texture = ExtResource("3_1rysu")
+
+[node name="WingNum" type="Label" parent="Wing"]
+offset_left = 163.0
+offset_top = 332.0
+offset_right = 232.0
+offset_bottom = 377.0
+theme_override_font_sizes/font_size = 30
+text = "× 1"

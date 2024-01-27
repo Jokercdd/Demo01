@@ -1,58 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://vnhb34u4vrno"]
+[gd_scene load_steps=6 format=3 uid="uid://vnhb34u4vrno"]
 
 [ext_resource type="Script" path="res://Scenes/entitise/goose.gd" id="1_fmi7f"]
-[ext_resource type="Texture2D" uid="uid://ca1hueov11u5g" path="res://Resources/image/body.png" id="2_ijcn0"]
-[ext_resource type="Script" path="res://Scenes/entitise/limbs.gd" id="3_1x2p1"]
-[ext_resource type="Texture2D" uid="uid://bqagtvl4ptjr" path="res://Resources/image/leg_F.png" id="4_atvdi"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7dld4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ijcn0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_we1ou"]
-radius = 46.0977
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8j3p0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_atvdi")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_38epy"]
-radius = 24.1868
+[ext_resource type="PackedScene" uid="uid://hvcw5306gash" path="res://Scenes/entitise/limbs/body.tscn" id="2_8sirr"]
+[ext_resource type="PackedScene" uid="uid://ctyh1s7877sdg" path="res://Scenes/entitise/limbs/head.tscn" id="3_ei8w3"]
+[ext_resource type="PackedScene" uid="uid://075mv50htb7o" path="res://Scenes/entitise/limbs/wing_f.tscn" id="4_6r32v"]
+[ext_resource type="PackedScene" uid="uid://bd5h8d05pms3o" path="res://Scenes/entitise/limbs/wing_b.tscn" id="5_5f1q2"]
 
 [node name="Goose" type="Node2D"]
 script = ExtResource("1_fmi7f")
 
-[node name="body" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_7dld4")
-script = ExtResource("3_1x2p1")
+[node name="body" parent="." instance=ExtResource("2_8sirr")]
 
-[node name="Area2D" type="Area2D" parent="body"]
+[node name="head" parent="." instance=ExtResource("3_ei8w3")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="body/Area2D"]
-position = Vector2(-23, 0)
-shape = SubResource("CircleShape2D_we1ou")
+[node name="wing_f" parent="." instance=ExtResource("4_6r32v")]
+position = Vector2(42, -87)
 
-[node name="leg" type="AnimatedSprite2D" parent="."]
-position = Vector2(34, 60)
-sprite_frames = SubResource("SpriteFrames_8j3p0")
-script = ExtResource("3_1x2p1")
-
-[node name="Area2D" type="Area2D" parent="leg"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="leg/Area2D"]
-position = Vector2(1, -23)
-shape = SubResource("CircleShape2D_38epy")
+[node name="wing_b" parent="." instance=ExtResource("5_5f1q2")]
+position = Vector2(50, -65)
